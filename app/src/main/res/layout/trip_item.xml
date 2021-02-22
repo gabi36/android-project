@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/parentLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="@dimen/small_padding">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/tripItemCardView"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        android:longClickable="true"
+        android:padding="@dimen/small_padding">
+
+        <ImageView
+            android:id="@+id/imageViewCardView"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/icon" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textViewTripName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/small_padding"
+                android:padding="@dimen/small_padding" />
+
+            <TextView
+                android:id="@+id/textViewTripDestination"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/small_padding"
+                android:padding="@dimen/small_padding" />
+
+        </LinearLayout>
+
+        <RatingBar
+            android:id="@+id/ratingBarCardView"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_gravity="bottom"
+            android:numStars="5"
+            android:stepSize="0.5" />
+
+        <CheckBox
+            android:id="@+id/favoriteButton"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="bottom|end"
+            android:button="@drawable/ic_baseline_favorite_red_24" />
+    </com.google.android.material.card.MaterialCardView>
+</LinearLayout>

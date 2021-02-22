@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddTripActivity">
+
+    <EditText
+        android:id="@+id/editTextTripDestination"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/trip_destination"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextTripName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/trip_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTripDestination" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTripName">
+
+        <RadioButton
+            android:id="@+id/cityBreak"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/city_break" />
+
+        <RadioButton
+            android:id="@+id/seaSide"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/sea_side" />
+
+        <RadioButton
+            android:id="@+id/mountains"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/mountains" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/priceText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Price"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <SeekBar
+        android:id="@+id/priceSeekBar"
+        android:layout_width="@dimen/price_length"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/priceText" />
+
+    <TextView
+        android:id="@+id/stardDate"
+        android:layout_width="@dimen/text_date_width"
+        android:layout_height="@dimen/text_date_heigth"
+        android:layout_marginTop="@dimen/large_margin"
+        android:text="@string/start_date"
+        app:layout_constraintEnd_toStartOf="@+id/buttonPickStartDate"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/priceSeekBar" />
+
+    <TextView
+        android:id="@+id/endDate"
+        android:layout_width="@dimen/text_date_width"
+        android:layout_height="@dimen/text_date_heigth"
+        android:layout_marginTop="@dimen/large_margin"
+        android:text="@string/end_date"
+        app:layout_constraintEnd_toStartOf="@+id/buttonPickEndDate"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/stardDate" />
+
+    <Button
+        android:id="@+id/buttonPickStartDate"
+        android:layout_width="@dimen/text_date_width"
+        android:layout_height="@dimen/text_date_heigth"
+        android:layout_marginTop="@dimen/small_marginx2"
+        android:text="@string/pick_a_date"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.522"
+        app:layout_constraintStart_toEndOf="@+id/endDate"
+        app:layout_constraintTop_toBottomOf="@+id/priceSeekBar"
+        android:onClick="buttonPickStartDate"
+        tools:ignore="OnClick" />
+
+    <Button
+        android:id="@+id/buttonPickEndDate"
+        android:layout_width="@dimen/text_date_width"
+        android:layout_height="@dimen/text_date_heigth"
+        android:layout_marginBottom="@dimen/extra_xlr8_margin"
+        android:text="@string/pick_a_date"
+        app:layout_constraintBottom_toTopOf="@+id/ratingBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/endDate"
+        android:onClick="buttonPickEndDate"
+        tools:ignore="OnClick" />
+
+    <RatingBar
+        android:id="@+id/ratingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/extra_large_margin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/endDate"
+        android:numStars="5"
+        android:stepSize="1"/>
+
+    <Button
+        android:id="@+id/buttonSaveTrip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/extra_large_margin"
+        android:text="@string/save_trip"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ratingBar"
+        android:onClick="buttonAddTrip"
+        tools:ignore="OnClick" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
